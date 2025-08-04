@@ -35,6 +35,8 @@ char	**ft_split(char *str)
 	{
 		while (ft_isspace(str[i]))
 			i++;
+		if (!str[i])
+			break ;
 		start = i;
 		while (str[i] && !ft_isspace(str[i]))
 			i++;
