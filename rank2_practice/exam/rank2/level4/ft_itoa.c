@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msedeno- <msedeno-@student.42malaga.fr>     +#+  +:+       +#+       */
-/*                                                +#+#+#+#+#+    +#+          */
-/*   Created: 2025/08/04 12:00:00 by msedeno-           #+#    #+#            */
-/*   Updated: 2025/08/04 12:00:00 by msedeno-          ###   ########.fr      */
+/*   By: casimarasn <casimarasn@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/04 12:00:00 by msedeno-          #+#    #+#             */
+/*   Updated: 2025/08/06 17:55:01 by casimarasn       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ char	*ft_itoa(int nbr)
 		result[count] = nbr % 10 + '0';
 		nbr /= 10;
 	}
-	return (result);	
+	return (result);
 }
 
-int	main (int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (ac == 2)
 	{
-		printf("%s",ft_itoa(atoi(av[1])));
+		printf("%s", ft_itoa(atoi(av[1])));
 	}
 	printf("\n");
 	return (0);

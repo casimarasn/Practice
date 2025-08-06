@@ -42,12 +42,12 @@ int	main(int ac, char **av)
 	len = ft_strlen(str) - 1;
 	if (ac == 2)
 	{
-		while(len >= 0)
+		while (len >= 0)
 		{
 			while (len >= 0 && ft_isspace(str[len]))
 				len --;
 			end = len;
-			while(len >= 0 && !ft_isspace(str[len]))
+			while (len >= 0 && !ft_isspace(str[len]))
 				len --;
 			start = len + 1;
 			while (start <= end)
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 				start++;
 			}
 			if (len > 0)
-			write (1, " ",1);		
+				write (1, " ", 1);
 		}
 	}
 	write (1, "\n", 1);

@@ -57,7 +57,7 @@ char	**ft_split(char *str)
 	return (word);
 }
 
-int	main (int	ac, char **av)
+int	main(int ac, char **av)
 {
 	char	**words;
 	int		i;
