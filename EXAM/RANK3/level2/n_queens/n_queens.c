@@ -12,6 +12,13 @@ board = tablero
 3 2 5 1
 
 */
+void	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
 void	*print_array(int *board, int size)
 {
 	int	i = 0;
@@ -28,6 +35,13 @@ void	*print_array(int *board, int size)
 int	is_valid(int *board, int pos, int value)
 {
 	
+	while (value < pos)
+	{
+		if (board[pos] == value)
+			return (1);
+		if (ft_abs(board[pos - value]))
+	}
+
 }
 void n_queen(int pos, int size, int value, int *board)
 {
