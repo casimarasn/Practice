@@ -15,7 +15,6 @@
 #include <stdlib.h>
 
 
-
 int *array_to_int(char **av, int size)
 {
 	int *list = malloc(sizeof(int) * size);
