@@ -14,9 +14,6 @@ target = el numero objetivo [av[1]]
 iterador = iterador de la lista recibida por argumentos
 iterador = iterador de la lista para imprimir
 result = array de int para imprimir
-
-
-
 */
 
 void print_list(int *list, int size)
