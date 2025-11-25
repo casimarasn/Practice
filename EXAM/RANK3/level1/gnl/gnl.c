@@ -6,7 +6,7 @@
 /*   By: msedeno- <msedeno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 05:14:44 by msedeno-          #+#    #+#             */
-/*   Updated: 2025/11/19 23:13:16 by msedeno-         ###   ########.fr       */
+/*   Updated: 2025/11/25 10:25:00 by msedeno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*get_next_line(int fd)
 		free(ret);
 		return (NULL);
 	}
-	memmove(b, tmp + 1, ft_strlen(tmp + 1))
+	memmove(b, tmp + 1, ft_strlen(tmp + 1));
 	return ret;
 }
 
