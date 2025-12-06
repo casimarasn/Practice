@@ -1,0 +1,137 @@
+
+# Colors
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+BLUE = \033[0;34m
+RESET = \033[0m
+
+# Program name
+NAME = philo
+
+# Compiler and flags
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -pthread -I$(INC_DIR)
+INCLUDES = -I include
+
+# Directories
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = include
+
+# Source files
+SRC_FILES = main.c \
+
+# Object files
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+
+# Header files
+HEADERS = $(INC_DIR)/philo.h
+
+# Rules
+all: $(NAME)
+
+$(NAME): $(OBJ_DIR) $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)✓ $(NAME) compiled successfully!$(RESET)"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo "$(BLUE)Compiling: $<$(RESET)"
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(YELLOW)Creating obj directory...$(RESET)"
+
+clean:
+	@rm -f $(OBJS)
+	@echo "$(RED)✗ Object files removed$(RESET)"
+
+fclean: clean
+	@rm -rf $(OBJ_DIR)
+	@rm -f $(NAME)
+	@echo "$(RED)✗ $(NAME) and obj directory removed$(RESET)"
+
+re: fclean all
+
+.PHONY: all clean fclean re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Colors
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[0;33m
+BLUE = \033[0;34m
+RESET = \033[0m
+
+# Program name
+NAME = philo
+
+# Compiler and flags
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -pthread -I$(INC_DIR)
+INCLUDES = -I include
+
+# Directories
+SRC_DIR = src
+OBJ_DIR = obj
+INC_DIR = include
+
+# Source files
+SRC_FILES = main.c \
+			arguments.c \
+			args_utils.c \
+			
+
+# Object files
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+
+# Header files
+HEADERS = $(INC_DIR)/philo.h
+
+# Rules
+all: $(NAME)
+
+$(NAME): $(OBJ_DIR) $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "$(GREEN)✓ $(NAME) compiled successfully!$(RESET)"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS) | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	@echo "$(BLUE)Compiling: $<$(RESET)"
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+	@echo "$(YELLOW)Creating obj directory...$(RESET)"
+
+clean:
+	@rm -f $(OBJS)
+	@echo "$(RED)✗ Object files removed$(RESET)"
+
+fclean: clean
+	@rm -rf $(OBJ_DIR)
+	@rm -f $(NAME)
+	@echo "$(RED)✗ $(NAME) and obj directory removed$(RESET)"
+
+re: fclean all
+
+.PHONY: all clean fclean re
