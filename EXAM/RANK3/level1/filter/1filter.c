@@ -22,10 +22,10 @@ int	ft_strncmp(char *s1, char *s2, int size)
 	while (s1[i] && s2[i] && i < size)
 	{
 		if (s1[i] != s2[i])
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 int	main(int ac, char **av)
